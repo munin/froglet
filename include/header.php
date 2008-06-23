@@ -60,9 +60,9 @@
 	  $loginaction = '<a href="index.php?action=logout">Logout</a>';
 
 	  $stmt_name = "froglet_logger";
-	  pg_prepare($db, $stmt_name, 
+	  pg_prepare($db->link, $stmt_name, 
 		     'INSERT INTO froglet_logs (page_url,pnick) VALUES ($1,$2)');
-	  pg_execute($db, $stmt_name, array($_SERVER['REQUEST_URI'],$_SESSION['USER']));
+	  pg_execute($db->link, $stmt_name, array($_SERVER['REQUEST_URI'],$_SESSION['USER']));
 
 	} else
 		$loginaction = '<a href="index.php?action=login">Login</a>';
