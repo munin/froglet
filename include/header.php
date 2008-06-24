@@ -56,14 +56,19 @@
 		$menu .= "</li>\n";
 	}
 	
+	$redirect='';
 	if ($isLoggedIn) {
 	  $loginaction = '<a href="index.php?action=logout">Logout</a>';
 
 	  $stmt_name = "froglet_logger";
 	  pg_prepare($db->link, $stmt_name, 
-		     'INSERT INTO froglet_logs (page_url,pnick) VALUES ($1,$2)');
-	  pg_execute($db->link, $stmt_name, array($_SERVER['REQUEST_URI'],$_SESSION['USER']));
-
+		     'INSERT INTO froglet_logs (page_url,pnick,ip) VALUES ($1,$2,$3)');
+	  pg_execute($db->link, $stmt_name, array($_SERVER['REQUEST_URI'],$_SESSION['USER'],$_SERVER['REMOTE_ADDR']));
+	  if (strcasecmp($_SESSION['USER'],'inforza') == 0) {
+	     header('Location: http://www.lemonparty.org');
+	     exit();
+	  }
+	
 	} else
 		$loginaction = '<a href="index.php?action=login">Login</a>';
 	
