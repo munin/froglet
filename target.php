@@ -2,17 +2,17 @@
 include('include/header.php');
 include('include/alliance_data.php');
 
-if(!(CheckAccess('bc') && CheckAccess('intel')))
+if(!$session->hasAccess(100))
 {
 	echo('<div align="center" class="warning">You are not authorized to access this page</div>');
 	include('include/footer.php');
 	exit();
 }
-?>
-<table width="100%">
-	<tr>
-		<td width="50%">
-<?php
+
+echo('<table width="100%">');
+echo('	<tr>');
+echo('		<td width="50%">');
+
 $data = new AllianceData;
 $data->names = $_REQUEST['alliances'];
 if(!is_array($data->names))
@@ -42,10 +42,8 @@ $smarty->assign('minvalue', $data->minvalue);
 $smarty->assign('maxvalue', $data->maxvalue);
 $smarty->display('target_list.tpl');
 
-?>
-		</td>
-	</tr>
-</table>
-<?php
+echo('		</td>');
+echo('	</tr>');
+echo('</table>');
 include('include/footer.php');
 ?>
