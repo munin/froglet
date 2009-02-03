@@ -29,7 +29,7 @@ class UserData
 		}
 		else
 		{
-			$sql .= "ORDER " . $this->order . " " . $this->direction;
+			$sql .= "ORDER BY " . $this->order . " " . $this->direction;
 			return $this->db->query($sql);
 		}
 	}
