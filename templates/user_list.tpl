@@ -12,7 +12,7 @@
 		<td><a href="user.php?pnick={$user.pnick}">{$user.pnick}</a></td>
 		<td>{$user.sponsor}</td>
 		{if $user.pubphone == "t" }
-			<td>{$phone}</td>
+			<td>{$user.phone}</td>
 		{else}
 			<td>Hidden</td>
 		{/if}

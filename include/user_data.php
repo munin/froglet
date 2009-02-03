@@ -24,12 +24,12 @@ class UserData
 		
 		if($this->pnick != "")
 		{
-			$sql .= "WHERE pnick = '" . $this->pnick . "' ";
+			$sql .= " AND pnick = '" . $this->pnick . "' ";
 			return $this->db->query($sql, true);
 		}
 		else
 		{
-			$sql .= "ORDER BY " . $this->order . " " . $this->direction;
+			$sql .= "ORDER BY userlevel DESC, " . $this->order . " " . $this->direction;
 			return $this->db->query($sql);
 		}
 	}
