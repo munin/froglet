@@ -19,12 +19,12 @@ class UserData
 	
 	public function selectUser()
 	{
-		$sql  = "SELECT pnick, sponsor, invites ";
+		$sql  = "SELECT pnick, sponsor, invites, phone, pubphone ";
 		$sql .= "FROM user_list ";
 		
 		if($this->pnick != "")
 		{
-			$sql .= "AND pnick = '" . $this->pnick . "' ";
+			$sql .= "WHERE pnick = '" . $this->pnick . "' ";
 			return $this->db->query($sql, true);
 		}
 		else

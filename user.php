@@ -31,6 +31,7 @@ if($data->pnick != "")
 	{
 		$tz[$i] = sprintf("GMT%+d", $i);
 	}
+
 	$smarty->assign('options', $tz);
 	$smarty->assign('bool', array(0 => "No", 1 => "Yes"));
 	$smarty->display('user_view.tpl');
