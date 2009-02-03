@@ -20,7 +20,7 @@ class UserData
 	public function selectUser()
 	{
 		$sql  = "SELECT pnick, sponsor, invites, phone, pubphone ";
-		$sql .= "FROM user_list ";
+		$sql .= "FROM user_list WHERE userlevel >= 100 ";
 		
 		if($this->pnick != "")
 		{
@@ -29,7 +29,7 @@ class UserData
 		}
 		else
 		{
-			$sql .= "ORDER BY userlevel DESC, " . $this->order . " " . $this->direction;
+			$sql .= "ORDER " . $this->order . " " . $this->direction;
 			return $this->db->query($sql);
 		}
 	}
