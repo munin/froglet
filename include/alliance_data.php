@@ -75,16 +75,9 @@ class AllianceData
 		$sql = $sql . "p.size, p.size - q.size AS size_growth, ";
 		$sql = $sql . "p.value, p.value - q.value AS value_growth, ";
 		$sql = $sql . "p.score, p.score - q.score AS score_growth, ";
-		$sql = $sql . "n.nick, a.name AS alliance, n.nap ";
-		if($this->action == "target")
-		{
-			$sql = $sql . ", g.size_rank AS galsizerank, g.value_rank AS galvaluerank ";
-		}
-		$sql = $sql . "FROM planet_dump q, planet_dump p, intel n, alliance_canon a ";
-		if($this->action == "target")
-		{
-			$sql = $sql . ", galaxy_dump g ";
-		}
+		$sql = $sql . "n.nick, a.name AS alliance, n.nap, ";
+		$sql = $sql . "g.size_rank AS galsizerank, g.value_rank AS galvaluerank ";
+		$sql = $sql . "FROM planet_dump q, planet_dump p, intel n, alliance_canon a, galaxy_dump g ";
 		$sql = $sql . "WHERE p.id = n.pid ";
 		$sql = $sql . "AND p.tick = (SELECT max_tick()) AND q.tick = GREATEST(p.tick - 2, 37) ";
 		$sql = $sql . "AND q.id = p.id ";
@@ -97,10 +90,9 @@ class AllianceData
 		{
 			$sql = $sql . "AND a.name = ''";
 		}
-		if($this->action == "target")
-		{
-			$sql = $sql . "AND p.x = g.x AND p.y = g.y AND g.tick = p.tick AND n.nap <> 1 ";
-		}
+
+		$sql = $sql . "AND p.x = g.x AND p.y = g.y AND g.tick = p.tick AND n.nap <> 1 ";
+
 		if($this->minroids != "")
 		{
 			$sql = $sql . "AND p.size >= " . $this->minroids . " ";

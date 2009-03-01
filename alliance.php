@@ -21,6 +21,7 @@ else
 {
 	$data->names = null;
 }
+$data->action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 $data->page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 0;
 $data->order = isset($_REQUEST['order']) ? $_REQUEST['order'] : 'score_rank';
 $data->direction = isset($_REQUEST['dir']) && $_REQUEST['dir'] == 'desc' ? $_REQUEST['dir'] : 'asc';

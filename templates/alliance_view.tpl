@@ -18,6 +18,8 @@
 		<th><a href="alliance.php?name={$alli}&order=value_rank&dir=asc">Value</a></th>
 		<th><a href="alliance.php?name={$alli}&order=size_rank&dir=asc">Size</a></th>
 		<th><a href="alliance.php?name={$alli}&order=xp_rank&dir=asc">XP</a></th>
+		<th><a href="alliance.php?name={$alli}&order=galvaluerank&dir=desc>G. Value</a></th>
+		<th><a href="alliance.php?name={$alli}&order=galsizerank&dir=desc>G. Size</a></th>
 		<th><a href="alliance.php?name={$alli}&order=x,y,z&dir=asc">X</a></th>
 		<th><a href="alliance.php?name={$alli}&order=y,x,z&dir=asc">Y</a></th>
 		<th><a href="alliance.php?name={$alli}&order=z,x,y&dir=asc">Z</a></th>
@@ -41,6 +43,8 @@
 		<td align="right">{$plan.value_rank} {html_image file=$plan.value_rank_diff|rank_move_image title=$plan.value_rank_diff|growth_rank:$plan.value_rank}</td>
 		<td align="right">{$plan.size_rank} {html_image file=$plan.size_rank_diff|rank_move_image title=$plan.size_rank_diff|growth_rank:$plan.size_rank}</td>
 		<td align="right">{$plan.xp_rank} {html_image file=$plan.xp_rank_diff|rank_move_image title=$plan.xp_rank_diff|growth_rank:$plan.xp_rank}</td>
+		<td align="right">{$plan.galvaluerank}</td>
+		<td align="right">{$plan.galsizerank}</td>
 		<td align="right"><a href="cluster.php?x={$plan.x}">{$plan.x}</a></td>
 		<td align="right"><a href="galaxy.php?x={$plan.x}&y={$plan.y}">{$plan.y}</a></td>
 		<td align="right"><a href="planet.php?x={$plan.x}&y={$plan.y}&z={$plan.z}">{$plan.z}</a></td>
