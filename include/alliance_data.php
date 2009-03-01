@@ -91,10 +91,9 @@ class AllianceData
 		{
 			$sql = $sql . "AND a.name = ''";
 		}
-		if($this->action == "target")
-		{
-			$sql = $sql . "AND p.x = g.x AND p.y = g.y AND g.tick = p.tick AND n.nap <> 1 ";
-		}
+
+		$sql = $sql . "AND p.x = g.x AND p.y = g.y AND g.tick = p.tick ";
+
 		if($this->minroids != "")
 		{
 			$sql = $sql . "AND p.size >= " . $this->minroids . " ";
