@@ -7,7 +7,7 @@
 	</tr>
 	<tr class="header">
 		<th>&nbsp;</th>
-		<th colspan="9">Rank</th>
+		<th colspan="6">Rank</th>
 		<th colspan="10">&nbsp;</th>
 		<th colspan="3">Growth</th>
 		<th colspan="1">Intel</th>
@@ -18,8 +18,8 @@
 		<th><a href="alliance.php?name={$alli}&order=value_rank&dir=asc">Value</a></th>
 		<th><a href="alliance.php?name={$alli}&order=size_rank&dir=asc">Size</a></th>
 		<th><a href="alliance.php?name={$alli}&order=xp_rank&dir=asc">XP</a></th>
-		<th><a href="alliance.php?name={$alli}&order=galvaluerank&dir=desc>G. Value</a></th>
-		<th><a href="alliance.php?name={$alli}&order=galsizerank&dir=desc>G. Size</a></th>
+		<th><a href="alliance.php?name={$alli}&order=galvaluerank&dir=desc">G. Value</a></th>
+		<th><a href="alliance.php?name={$alli}&order=galsizerank&dir=desc">G. Size</a></th>
 		<th><a href="alliance.php?name={$alli}&order=x,y,z&dir=asc">X</a></th>
 		<th><a href="alliance.php?name={$alli}&order=y,x,z&dir=asc">Y</a></th>
 		<th><a href="alliance.php?name={$alli}&order=z,x,y&dir=asc">Z</a></th>
