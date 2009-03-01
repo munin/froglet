@@ -3,7 +3,7 @@
 <td>
 <table cellspacing="1" cellpadding="3" width="100%">
 	<tr class="datahigh">
-		<th colspan="19">Alliance intel</th>
+		<th colspan="21">Alliance intel</th>
 	</tr>
 	<tr class="header">
 		<th>&nbsp;</th>
