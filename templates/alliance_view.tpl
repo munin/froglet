@@ -7,7 +7,7 @@
 	</tr>
 	<tr class="header">
 		<th>&nbsp;</th>
-		<th colspan="4">Rank</th>
+		<th colspan="6">Rank</th>
 		<th colspan="10">&nbsp;</th>
 		<th colspan="3">Growth</th>
 		<th colspan="1">Intel</th>
