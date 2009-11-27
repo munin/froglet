@@ -19,10 +19,6 @@
 		<td>{html_options name=timezone options=$options selected=$data.timezone}</td>
 	</tr>
 	<tr class="header">
-		<th>Phone</th>
-		<td><input type="text" name="phone" value="{$data.phone}"/></td>
-	</tr>
-	<tr class="header">
 		<th>E-mail</th>
 		<td><input type="text" name="email" value="{$data.email}" size="30"/></td>
 	</tr>
